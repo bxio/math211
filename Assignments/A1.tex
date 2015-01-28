@@ -54,29 +54,81 @@
 \begin{document}
   \setheader{Math 211 (A01)}{Typed Homework 1}{Bill Xiong, Arlene Zhang}{}{}{V00737042, V00123456}
 
-  \begin{enumerate}
-    \item Let $\vec u=\mat{1\\2\\3}$, $\vec v=\mat{4\\5\\6}$, and $\vec w=\mat{7\\8\\9}$. Explain whether
-      the set $A=\{\vec u,\vec v,\vec w\}$ is a basis for $\R^3$.
+\section{Question 1}
+    Let $\vec u=\mat{1\\2\\3}$, $\vec v=\mat{4\\5\\6}$, and $\vec w=\mat{7\\8\\9}$. Explain whether
+          the set $A=\{\vec u,\vec v,\vec w\}$ is a basis for $\R^3$.
       Make sure to include all relevant definitions.
 
-        \begin{enumerate}
-        \item A \emph{basis} for a subspace $V\subset \R^3$ is a linearly independent set of vectors $A$ such that $\Span\, A=V$.
+\subsection{Solution for Question 1}
 
-        First, let's check whether $a$ is a libearly independent set.
+    A \emph{basis} for a subspace $V\subset \R^3$ is a linearly independent set of vectors $A$ such that $\Span\, A=V$.
 
-
-        \end{enumerate}
-
+    First, let's check whether $a$ is a linearly independent set.
+    A set is considered \emph{linearly independent} if the only way to express it as a linear combination of vectors is trivial. (ie, the combination where all coefficients are $0$).
 
 
-    \item Fix $\vec u,\vec v\in \R^n$.  Show that $\Span(\Span\{\vec u,\vec v\})=\Span\{\vec u,\vec v\}$.
+
+    Does $\mat{0\\0\\0}=c_1\mat{1\\2\\3}+c_2\mat{4\\5\\6}+c_3\mat{7\\8\\9}$
+           have a nontrivial solution?
+
+    We can rewrite the equation above as:
+        \begin{align*}
+          0&=c_1+4c_2+7c_3\\
+          0&=2c_1+5c_2+8c_3\\
+          0&=3c_1+6c_2+9c_3.
+        \end{align*}
+        \\
+    FIXME: SHOW MORE WORK HERE\\
+  By solving this system, we can conclude that any $c$'s satisfying the condition $c_2=-2c_3=-2c_1$ will lead to a valid solution.
+  If we arbitrarily chose the value of $1$ for $c_1$, we can plug in and find that $c_2 = -2$ and $c_3 = 1$ give a solution to the above system.
+  Since $c_1$, $c_2$, and $c_3 \neq 0$, $\vec 0=\vec u-2\vec v+\vec w$ is a solution.
+
+Since $\vec 0$ can be written as a non-trivial linear combination of vectors in $A$, $A$ is a linearly dependent set, and therefore cannot be a basis for $R^3$.
+
+\section{Question 2}
+
+Fix $\vec u,\vec v\in \R^n$.  Show that $\Span(\Span\{\vec u,\vec v\})=\Span\{\vec u,\vec v\}$.
       Make sure to include all relevant definitions.
 
+\subsection{Solution for Question 2}
 
-    SOLUTION For 2 goes here
+    The \emph{span} of a set of vectors $X$ is defined as set of all linear combinations of vectors in $X$.
+
+    We want to show that for any two vectors $\vec u,\vec v\in \R^n$,
+        $\Span(\Span\{\vec u,\vec v\})=\Span\{\vec u,\vec v\}$. To do this, we show that $\Span(\Span\{\vec u,\vec v\})$ and $\Span\{\vec u,\vec v\}$ are subsets of each other.
+
+  Let $\vec u,\vec v$ be some arbitrary vectors in $\R^n$ and $A=\Span\{\vec u,\vec v\}$.
+
+  $A=\{\vec x\in\R^n:\vec x=m\vec u+n\vec v$ for some $m,n\in \R\}$.
+
+    If we also define $\vec w$ as some arbitrary vector in $\Span\,A$, then by definition
+    $\vec w=\sum_{i=1}^n k_i\vec s_i$. for some $s_i \in \vec A$ and some value $k \in \R$.
+
+By the definition of $A$, we can expand the above into:
+
+\[
+    \vec w =\sum_{i=1}^n k_i (m_i\vec u+n_i\vec v)=
+          (\sum_{i=1}^n k_i m_i)\vec u+
+          (\sum_{i=1}^n k_i n_i)\vec v
+\]
+
+ Expanding based on the definition
+        of $A$, we see
+        \[
+          \vec w =\sum_{i=1}^n \gamma_i (\alpha_i\vec u+\beta_i\vec v)=
+          \left(\sum_{i=1}^n \gamma_i \alpha_i\right)\vec u+
+          \left(\sum_{i=1}^n \gamma_i \beta_i\right)\vec v
+        \]
+        for some $m_i,n_i\in \R$.
+
+        However, the right hand sides expresses
+        $\vec w$ as a linear combination of $\vec u$ and $\vec v$.  Hence, $\vec w\in A$.
+        This shows $\Span\, A\subseteq A$.  Since $A$ is obviously a subset of  $\Span\,A$, $A=\Span\,A$.
 
 
-    \item The worksheets define $\Proj_{\vec v}\vec u$ as the vector in the direction $\vec v$ such that
+\section{Question 3}
+
+The worksheets define $\Proj_{\vec v}\vec u$ as the vector in the direction $\vec v$ such that
       $\vec u-\Proj_{\vec v}\vec u$ is orthogonal to $\vec v$.  Call this definition (a).  Your textbook
       defined $\Proj_{\vec v}\vec u$ as the vector $\frac{\vec u\cdot \vec v}{\vec v\cdot\vec v}\vec v$.
       Call this definition (b).  Show that definitions (a) and (b) are equivalent by showing
@@ -85,7 +137,9 @@
       In your answer, elaborate on definition (a) by including
       the definition of \emph{vector in the direction of $\vec v$} and \emph{orthogonal}.
 
-    SOLUTION For 3 goes here
+\subsection{Solution for Question 3}
+FIXME:SOLUTION For 3 goes here\\
 
-  \end{enumerate}
+\section{Addendum}
+  This is the first time one of us is submitting an assignment in \LaTeX{}. Please be gentle in grading our assignment and excuse the obvious poor formatting.
 \end{document}
