@@ -113,8 +113,7 @@ Fix $\vec u,\vec v\in \R^n$.  Show that $\Span(\Span\{\vec u,\vec v\})=\Span\{\v
         and thus $\Span\, A\subseteq A$.
 
     $\Rightarrow$:\\
-    It's obvious that $A$ is a subset of $\Span\,A$.
-
+    By definition, $A$ is a subset of $\Span\,A$.
 
     $\therefore A=\Span\,A$.
 
@@ -130,6 +129,8 @@ The worksheets define $\Proj_{\vec v}\vec u$ as the vector in the direction $\ve
       the definition of \emph{vector in the direction of $\vec v$} and \emph{orthogonal}.
 
 \subsection{Solution for Question 3}
+    We'll assume that $\vec v \neq 0$ because otherwise it would break definition (b). \footnote{I'm also a computer scientist, and in my profession, dividing by zeros usually throws syntax errors.}
+
     Remember that a vector $\vec u$ is in the direction of a vector $\vec v$ if $\vec u=k\vec v$ for some nonzero $k \in \R$.
     Also, two vectors $\vec u, \vec v$ are considered \emph{orthogonal} if $\vec u \cdot \vec v = 0$.
 
@@ -149,6 +150,8 @@ The worksheets define $\Proj_{\vec v}\vec u$ as the vector in the direction $\ve
     \[
         \vec u \cdot \vec v - \frac{\vec u\cdot \vec v}{\vec v\cdot\vec v}\vec v \cdot \vec v = \vec u \cdot \vec v - \vec u \cdot \vec v = 0
     \]
+
+    This means that $(\vec u-\Proj_{\vec v}\vec u) \cdot \vec v$ is orthoganal to $\vec v$.
 \section{Addendum}
-  This is the first time one of us is submitting an assignment in \LaTeX{}. Please be gentle in grading our assignment and excuse the obvious poor formatting.
+  This is the first time one of us is submitting an assignment in \LaTeX{}. Please be gentle in grading our assignment and excuse the obvious poor formatting. Many thanks to the people in the assistance centre, who provided invaluable help for questions 2 and 3.
 \end{document}
